@@ -17,22 +17,24 @@ export const WordStyling = ({ txt, mostOccuring, uploaded }) => {
 		}
 	};
 
-	//This is just silly function that shows which word or words was most popular and adds a &-sign if there is more than one.
-	const textFacts = (wordObject) => {
+	//This is just silly function that shows which word or words was most popular and adds a comma or a &-sign if there are several words.
+	const textFacts = (wordOrWords) => {
 		let popularWord = '';
-		wordObject.forEach((word, index) => {
-			if (wordObject.length - index === 1) {
+		wordOrWords.forEach((word, index) => {
+			if (wordOrWords.length - index === 1) {
 				popularWord += `${word}`;
-			} else if (wordObject.length - index > 1) {
+			} else if (wordOrWords.length - index > 2) {
+				popularWord += `${word}, `;
+			} else {
 				popularWord += `${word} & `;
 			}
 		});
 		return popularWord;
 	};
 	//Writes either "word was" or "words where" depending on how many words there was the most of.
-	const grammarCheck = (wordObject) => {
+	const grammarCheck = (wordOrWords) => {
 		let oneOrMore;
-		if (wordObject.length === 1) {
+		if (wordOrWords.length === 1) {
 			oneOrMore = 'word is:';
 		} else {
 			oneOrMore = 'words are:';

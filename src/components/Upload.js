@@ -17,7 +17,6 @@ export const Upload = () => {
 
 	const handleFileChoosen = (file) => {
 		fileReader = new FileReader();
-		console.log(fileReader.onloadend);
 		fileReader.onloadend = handleFileRead;
 		//Added this if-statement to prevent the site from crashing when clicking on Select text file a second time and then pressing on cancel.
 		if (file instanceof Blob) {

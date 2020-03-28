@@ -8,8 +8,6 @@ export const WordSorting = ({ file, uploaded }) => {
 	let compare = 0;
 	let mostOccuring = [];
 
-	console.log(stringText);
-
 	const wordArray = (stringOfWords) => {
 		const arrayOfWords = stringOfWords.toLowerCase().split(/\s+/);
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { WordStyling } from './WordStyling';
 
-export const WordSorting = ({ file, uploaded }) => {
-	const stringText = file;
+export const WordSorting = ({ file }) => {
+	// const stringText = file;
 	// let counter = Object.create(null);
 	let counter = {};
 	let compare = 0;
@@ -36,7 +36,7 @@ export const WordSorting = ({ file, uploaded }) => {
 	return (
 		<div>
 			{wordArray(file)}
-			<WordStyling txt={stringText} mostOccuring={mostOccuring} uploaded={uploaded} />
+			<WordStyling file={file} mostOccuring={mostOccuring} />
 		</div>
 	);
 };

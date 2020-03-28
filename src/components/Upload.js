@@ -5,20 +5,19 @@ export const Upload = () => {
 	const [ uploaded, setUploaded ] = useState(false);
 	const [ file, setFile ] = useState('');
 
-	let fileReader;
-	let content = '';
+	const handleFileRead = (fileReader) => {
+		const { result } = fileReader;
+		setFile(result);
 
-	const handleFileRead = () => {
-		content = fileReader.result;
-		setFile(content);
 		//setUploaded makes sure that the functions in the wordstyling component won't runt until a file is acutally succsefulyy uploaded.
 		setUploaded(true);
 	};
 
 	const handleFileChoosen = (file) => {
-		fileReader = new FileReader();
+		const fileReader = new FileReader();
 		fileReader.onloadend = handleFileRead;
-		//Added this if-statement to prevent the site from crashing when clicking on Select text file a second time and then pressing on cancel.
+		fileReader.onloadend = () => handleFileRead(fileReader);
+		//Added this if-statement to prevent the site from crashing when clicking on Select text file a second time and then pressing cancel.
 		if (file instanceof Blob) {
 			fileReader.readAsText(file);
 		}
@@ -38,7 +37,7 @@ export const Upload = () => {
 				accept=".txt, .md, .rtf"
 				onChange={(event) => handleFileChoosen(event.target.files[0])}
 			/>
-			<WordSorting file={file} uploaded={uploaded} />
+			{uploaded && <WordSorting file={file} />}
 		</div>
 	);
 };

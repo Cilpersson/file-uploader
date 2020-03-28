@@ -15,13 +15,14 @@ body {
 }
 
 h1 {
+	font-size: 20px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
 .foobar {
-	font-size: 75px;
+	font-size: 55px;
 	font-family: monospace;
 }
 
@@ -45,20 +46,21 @@ form {
 	justify-content: center;
 	align-items: center;
 	padding: 5px;
-	margin: 0 auto 40px;
+
+	margin: 20px auto;
 
 	font-weight: 700;
-	font-size: 25px;
+	font-size: 18px;
 	font-family: monospace;
 
 	transition: 0.3s;
 	border-radius: 20px;
 
-	width: 300px;
-	height: 100px;
+	width: 200px;
+	height: 80px;
 
 	background: #e2e1e3;
-	box-shadow: 10px 30px 41px #c0bfc1, -10px -30px 41px #ffffff;
+	box-shadow: 6px 9px 17px #c0bfc1, -6px -9px 17px 0px #ffffff;
 }
 
 .select-file-btn:hover {
@@ -71,7 +73,7 @@ form {
 }
 
 .all-text-container {
-	margin-top: 45px;
+	padding: 20px;
 }
 
 .span-word-fact {
@@ -87,4 +89,28 @@ form {
 
 .hide-word-facts {
 	display: none;
+}
+
+@media (min-width: 668px) {
+	h1 {
+		font-size: 32px;
+	}
+
+	.foobar {
+		font-size: 65px;
+	}
+
+	.select-file-btn {
+		width: 300px;
+		height: 100px;
+		font-size: 25px;
+
+		box-shadow: 10px 30px 41px #c0bfc1, -10px -30px 41px #ffffff;
+	}
+}
+
+@media (min-width: 1024px) {
+	.foobar {
+		font-size: 75px;
+	}
 }

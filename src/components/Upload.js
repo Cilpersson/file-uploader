@@ -36,7 +36,7 @@ export const Upload = () => {
 				id="file"
 				style={{ display: 'none' }}
 				className="inputFile"
-				accept=".txt, .md, .rtf, .doc, .docx"
+				accept=".txt, .md, .rtf"
 				onChange={(event) => handleFileChoosen(event.target.files[0])}
 			/>
 			<WordSorting file={file} uploaded={uploaded} />

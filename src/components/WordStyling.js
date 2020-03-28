@@ -33,9 +33,9 @@ export const WordStyling = ({ txt, mostOccuring, uploaded }) => {
 	const grammarCheck = (wordObject) => {
 		let oneOrMore;
 		if (wordObject.length === 1) {
-			oneOrMore = 'word was:';
+			oneOrMore = 'word is:';
 		} else {
-			oneOrMore = 'words where:';
+			oneOrMore = 'words are:';
 		}
 		return oneOrMore;
 	};

@@ -39,6 +39,7 @@ form {
 }
 .text-for-container {
 	margin: auto;
+	word-break: break-word;
 }
 
 .select-file-btn {

@@ -1,14 +1,14 @@
 import React from 'react';
 
-export const WordStyling = ({ file, mostOccuring }) => {
-	const foobarTheText = (mostOccuring, stringOfWords) => {
+export const WordStyling = ({ file, mostOccurring }) => {
+	const foobarTheText = (mostOccurring, stringOfWords) => {
 		//I hade some issues with words beeing replaced inside other word such as faTHEr, i tried so many things and finally
 		//found this (let reg = new RegExp(`\\b${word}\\b`, 'gi')) solution. This is my first encounter with RegEx and I learned a lot!
 
-		if (mostOccuring[0] === '') {
+		if (mostOccurring[0] === '') {
 			return 'You seem to have uploaded an empty text file 😔';
 		} else {
-			mostOccuring.forEach((word) => {
+			mostOccurring.forEach((word) => {
 				const newWord = `FOO${word}BAR`;
 				let reg = new RegExp(`\\b${word}\\b`, 'gi');
 				stringOfWords = stringOfWords.replace(reg, newWord);
@@ -35,13 +35,13 @@ export const WordStyling = ({ file, mostOccuring }) => {
 	return (
 		<section className="all-text-container">
 			{/* Hiding or showing word-facts depending on if the text file was uploaded and if it was empty or not */}
-			<div className={mostOccuring[0] !== '' ? 'show-word-facts' : 'hide-word-facts'}>
+			<div className={mostOccurring[0] !== '' ? 'show-word-facts' : 'hide-word-facts'}>
 				{/* Writes either "word was" or "words where" depending on how many words there was the most of. */}
-				The most occuring {mostOccuring.length === 1 ? 'word is ' : 'words are '}{' '}
-				<span className="span-word-fact">{textFact(mostOccuring)}</span>
+				The most occurring {mostOccurring.length === 1 ? 'word is ' : 'words are '}{' '}
+				<span className="span-word-fact">{textFact(mostOccurring)}</span>
 			</div>
 			<div className="text-container">
-				<p className="text-for-container">{foobarTheText(mostOccuring, file)}</p>
+				<p className="text-for-container">{foobarTheText(mostOccurring, file)}</p>
 			</div>
 		</section>
 	);

@@ -6,7 +6,7 @@ export const WordSorting = ({ file }) => {
 	// let counter = Object.create(null);
 	let counter = {};
 	let compare = 0;
-	let mostOccuring = [];
+	let mostOccurring = [];
 
 	const wordArray = (stringOfWords) => {
 		const arrayOfWords = stringOfWords.toLowerCase().split(/\s+/);
@@ -23,12 +23,12 @@ export const WordSorting = ({ file }) => {
 
 			if (counter[wordInArray] > compare) {
 				compare = counter[wordInArray];
-				mostOccuring = [];
-				mostOccuring.push(wordInArray);
+				mostOccurring = [];
+				mostOccurring.push(wordInArray);
 
 				//This part checks if there is more than one word that occurs most times.
 			} else if (counter[wordInArray] === compare) {
-				mostOccuring.push(wordInArray);
+				mostOccurring.push(wordInArray);
 			}
 		});
 	};
@@ -36,7 +36,7 @@ export const WordSorting = ({ file }) => {
 	return (
 		<div>
 			{wordArray(file)}
-			<WordStyling file={file} mostOccuring={mostOccuring} />
+			<WordStyling file={file} mostOccurring={mostOccurring} />
 		</div>
 	);
 };

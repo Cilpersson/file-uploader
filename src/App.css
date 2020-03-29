@@ -1,6 +1,6 @@
 body {
 	font-family: 'Lato', sans-serif;
-	overflow: auto;
+	/* overflow: auto; */
 	background: #e2e1e3;
 }
 
@@ -12,6 +12,17 @@ body {
 .App {
 	text-align: justify;
 	max-width: 850px;
+	background: #e2e1e3;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+.wrapper {
+	box-shadow: 10px 5px 16px 5px #c0bfc1, -10px -5px 20px 0px #ffffff;
+	margin: 25px;
+	padding: 10px;
+	border-radius: 5px;
 }
 
 h1 {
@@ -21,25 +32,13 @@ h1 {
 	justify-content: center;
 }
 
-.foobar {
+.span-foobar {
 	font-size: 55px;
 	font-family: monospace;
 }
 
-form {
-	width: 70%;
-	display: flex;
-	flex-direction: column;
-	margin: auto;
-}
-
-.text-container {
-	display: flex;
-	width: 100%;
-}
-.text-for-container {
-	margin: auto;
-	word-break: break-word;
+.span-word-fact {
+	font-weight: 700;
 }
 
 .select-file-btn {
@@ -51,11 +50,11 @@ form {
 	margin: 20px auto;
 
 	font-weight: 700;
-	font-size: 20npm startpx;
+	font-size: 20px;
 	font-family: monospace;
 
 	transition: 0.3s;
-	border-radius: 20px;
+	border-radius: 5px;
 
 	width: 200px;
 	height: 50px;
@@ -64,21 +63,8 @@ form {
 	box-shadow: 6px 9px 17px #c0bfc1, -6px -9px 17px 0px #ffffff;
 }
 
-.select-file-btn:hover {
-	background: linear-gradient(145deg, #cbcbcc, #f2f1f3);
-	color: #000;
-}
-
-.select-file-btn:active {
-	box-shadow: inset 10px 30px 41px #c0bfc1, inset -10px -30px 41px #ffffff;
-}
-
-.all-text-container {
+.all-info-container {
 	padding: 20px;
-}
-
-.span-word-fact {
-	font-weight: 700;
 }
 
 .show-word-facts {
@@ -90,6 +76,28 @@ form {
 
 .hide-word-facts {
 	display: none;
+}
+
+.text-for-container {
+	margin: auto;
+	word-break: break-word;
+}
+
+footer {
+	display: flex;
+	flex: 1;
+	align-items: flex-end;
+	justify-content: center;
+	font-family: monospace;
+}
+
+.select-file-btn:hover {
+	background: linear-gradient(145deg, #cbcbcc, #f2f1f3);
+	color: #000;
+}
+
+.select-file-btn:active {
+	box-shadow: inset 10px 30px 41px #c0bfc1, inset -10px -30px 41px #ffffff;
 }
 
 @media (min-width: 668px) {
@@ -106,7 +114,7 @@ form {
 		height: 75px;
 		font-size: 28px;
 
-		box-shadow: 10px 30px 41px #c0bfc1, -10px -30px 41px #ffffff;
+		box-shadow: 7px 10px 9px 0px #c0bfc1, -7px -10px 21px 0px #ffffff;
 	}
 }
 

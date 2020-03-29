@@ -24,17 +24,15 @@ export const Upload = () => {
 	};
 
 	return (
-		<div className="upload">
+		<div>
 			<label htmlFor="file" className="select-file-btn">
 				Select text file
 			</label>
 			<input
-				text="Drag text file here"
 				type="file"
 				id="file"
 				style={{ display: 'none' }}
-				className="inputFile"
-				accept=".txt, .md, .rtf"
+				accept=".txt, .md, .rtf, .doc, .docx"
 				onChange={(event) => handleFileChoosen(event.target.files[0])}
 			/>
 			{uploaded && <WordSorting file={file} />}

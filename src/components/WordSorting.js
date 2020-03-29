@@ -12,7 +12,7 @@ export const WordSorting = ({ file }) => {
 		const arrayOfWords = stringOfWords.toLowerCase().split(/\s+/);
 
 		arrayOfWords.forEach((wordInArray) => {
-			//"wordInArray.includes('_')"" is not a clean solution but it's a solution at least.
+			//I added "wordInArray.includes('_')" because I didn't think that a_ should count as a word (Doughnut file) perhaps I should have made a RegEx for all strange symbols instead.
 			if (wordInArray.includes('_')) {
 				counter[wordInArray] = 0;
 			} else if (counter[wordInArray] === undefined) {

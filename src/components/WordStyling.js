@@ -33,16 +33,14 @@ export const WordStyling = ({ file, mostOccurring }) => {
 	};
 
 	return (
-		<section className="all-text-container">
+		<section className="all-info-container">
 			{/* Hiding or showing word-facts depending on if the text file was uploaded and if it was empty or not */}
 			<div className={mostOccurring[0] !== '' ? 'show-word-facts' : 'hide-word-facts'}>
 				{/* Writes either "word was" or "words where" depending on how many words there was the most of. */}
 				The most occurring {mostOccurring.length === 1 ? 'word is ' : 'words are '}{' '}
 				<span className="span-word-fact">{textFact(mostOccurring)}</span>
 			</div>
-			<div className="text-container">
-				<p className="text-for-container">{foobarTheText(mostOccurring, file)}</p>
-			</div>
+			<p className="text-for-container">{foobarTheText(mostOccurring, file)}</p>
 		</section>
 	);
 };
